@@ -26,6 +26,13 @@
 
     $capitals=[];
 
-    
+    for ($i=0; $i < count($city); $i++) { 
+        $capitals[]=[
+            'country' => $country[$i],
+            'city' => $city[$i]
+        ];
+    }
+
+    var_dump($capitals);
 
 ?>
