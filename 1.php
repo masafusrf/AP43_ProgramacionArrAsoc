@@ -19,11 +19,13 @@
 
 
 
-    $city=explode( ",", "Tokyo,Mexico City,New York City,Mumbai,Seoul,Shanghai,Lagos,Buenos Aires, Cairo,London");
-    $capitals[]=$city;
+    $city="Tokyo,Mexico City,New York City,Mumbai,Seoul,Shanghai,Lagos,Buenos Aires, Cairo,London";
+    $cities=explode("," , $city);
 
-    foreach ($capitals as $key => $value) {
-        
+    $capitals=[];
+
+    foreach ($cities as $value) {
+        $capitals[] = ["city" => $value];
     }
 
     var_dump($capitals);
