@@ -613,4 +613,28 @@
         ]
     ];
 
+        // Neville Marks is 77 years old
+        // Laurel Buckner is 73 years old
+        // Zia Bullock is 25 years old
+
+    $info=[];
+
+    foreach ($data as $persona => $dato) {
+
+        $usuario=[];
+        
+        foreach ($dato as $key => $value) {
+            if ($key == "User" || $key == "Age") {
+                $usuario[$key] = $value;
+            }
+        }
+
+        $info[]=$usuario;
+    }
+
+        
+    foreach ($info as $usuario) {
+        echo $usuario['User'] . " is " . $usuario['Age'] . " years old. </br>";
+    }
+
 ?>
