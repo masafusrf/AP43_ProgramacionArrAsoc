@@ -17,8 +17,16 @@
     //['country' =>"England]"
 //];
 
-    $country = explode(",", "Japan,Mexico,USA,India,Korea,China,Nigeria,Argentina,Egypt,England");
-    $capitals[]= $country;
+    $country = "Japan,Mexico,USA,India,Korea,China,Nigeria,Argentina,Egypt,England";
+    $countries= explode(",", $country);
+
+    $capitals=[];
+
+    foreach ($countries as $value) {
+        $capitals[]=['country' => $value];
+    }
+
+
     var_dump($capitals);
 
 
