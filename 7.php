@@ -141,12 +141,23 @@
 
     $info=[];
 
-    foreach ($data as $dato) {
+foreach ($data as $persona => $dato) {
 
-        $age = $dato["Age"];
-
-        if ($age >= 35 && $age <= 65) {
-            echo $dato["User"] . " is " . $age . " years old.</br>";
+    $usuario=[];
+    
+    foreach ($dato as $key => $value) {
+        if ($key == "User" || $key == "Age") {
+            $usuario[$key] = $value;
         }
+    }
+
+
+    if ($usuario['Age'] >= 35 && $usuario['Age'] <= 65) {
+        $info[] = $usuario;
+    }
+}
+
+    foreach ($info as $usuario) {
+        echo $usuario['User'] . " is " . $usuario['Age'] . " years old. </br>";
     }
 ?>
