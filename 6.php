@@ -1,6 +1,8 @@
 <?php
 
-// Ejercicio 6.- A partir del array $data proporcionado, muestra todos los usuarios junto con su edad. Aquí tienes un ejemplo de como queda la salida por pantalla:
+// Ejercicio 6.- A partir del array $data proporcionado, 
+// muestra todos los usuarios junto con su edad. 
+// Aquí tienes un ejemplo de como queda la salida por pantalla:
 
 // ...
 // Neville Marks is 77 years old
@@ -616,24 +618,8 @@
         // Neville Marks is 77 years old
         // Laurel Buckner is 73 years old
         // Zia Bullock is 25 years old
-
-    $info=[];
-
-    foreach ($data as $persona => $dato) {
-
-        $usuario=[];
         
-        foreach ($dato as $key => $value) {
-            if ($key == "User" || $key == "Age") {
-                $usuario[$key] = $value;
-            }
-        }
-
-        $info[]=$usuario;
-    }
-
-        
-    foreach ($info as $usuario) {
+    foreach ($data as $usuario) {
         echo $usuario['User'] . " is " . $usuario['Age'] . " years old. </br>";
     }
 

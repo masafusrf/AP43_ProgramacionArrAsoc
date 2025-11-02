@@ -1,14 +1,16 @@
 <?php
 
-    //Ejercicio 7.- A partir del array $data proporcionado, 
-    // muestra todos los usuarios junto con su edad, 
-    // siempre que cumplan el criterio de estar entre 35 y 65 años. 
-    // Aquí tienes un ejemplo de como queda la salida por pantalla:
+    /*
+Ejercicio 9.- A partir del array $data proporcionado, 
+muestra todos los usuarios que no tienen platos de comida favoritos, 
+así como su edad media. Aquí tienes un ejemplo de como queda la salida por pantalla:
 
-    // Lillith Herring is 62 years old
+Total people with no preferences: 20
+Average Age for people with no preferences: 61.05
+    */
 
 
-    $data = [
+   $data = [
         [
             "User" => "Ishmael Porter",
             "Country" => "Vietnam",
@@ -137,8 +139,25 @@
         ]
     ];
 
+    $paraGuardar=[];
+    $sumaEdad=0;
+    $contador=0;
 
-    foreach ($data as $usuario) {
-        echo $usuario['User'] . " is " . $usuario['Age'] . " years old. </br>";
+
+    foreach ($data as $key => $value) {
+        if ($value['Favorites'] == "") {
+            $paraGuardar[]=$key;
+            $sumaEdad= $sumaEdad + $value['Age'];
+            $contador++;
+        }
+        
     }
+
+    echo "Total people with no preferences: " . $contador . "<br>";
+
+    if ($contador > 0) {
+        $mediaEdad=$sumaEdad / $contador;
+        echo "Average Age for people with no preferences: " . $mediaEdad; 
+    } 
+
 ?>

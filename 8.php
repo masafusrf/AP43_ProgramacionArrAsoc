@@ -1,14 +1,16 @@
 <?php
 
-    //Ejercicio 7.- A partir del array $data proporcionado, 
-    // muestra todos los usuarios junto con su edad, 
-    // siempre que cumplan el criterio de estar entre 35 y 65 años. 
-    // Aquí tienes un ejemplo de como queda la salida por pantalla:
 
-    // Lillith Herring is 62 years old
+    /*Ejercicio 8.- A partir del array $data proporcionado, 
+    muestra todos los usuarios de un país en concreto introducido por teclado. 
+    Aquí tienes un ejemplo de como queda la salida por pantalla:
 
+    People from Spain
+    -----------------------------
+    Chastity Mcgowan likes desserts, noodles
+    Raven Olsen likes all kinds of food*/
 
-    $data = [
+        $data = [
         [
             "User" => "Ishmael Porter",
             "Country" => "Vietnam",
@@ -27,7 +29,7 @@
             "Age" => "68",
             "Favorites" => "cereals, soups"
         ],
-         [
+        [
             "User" => "Chastity Mcgowan",
             "Country" => "Spain",
             "Age" => "85",
@@ -122,23 +124,24 @@
             "Country" => "Italy",
             "Age" => "53",
             "Favorites" => "salads"
-        ],
-        [
-            "User" => "Aurora Freeman",
-            "Country" => "Chile",
-            "Age" => "33",
-            "Favorites" => "salads"
-        ],
-        [
-            "User" => "David Schneider",
-            "Country" => "Ireland",
-            "Age" => "85",
-            "Favorites" => "pies, cereals"
         ]
     ];
 
+    $country= $_GET['country'];
+    echo "People from $country <br>";
+    echo "----------------------------- <br>";
 
     foreach ($data as $usuario) {
-        echo $usuario['User'] . " is " . $usuario['Age'] . " years old. </br>";
+
+        if ($usuario['Country'] == $country) {
+            if ($usuario['Favorites'] == "") {
+                echo $usuario['User'] . " doesn't have any preferences. <br>";
+            } else {
+                echo $usuario['User'] . " likes " . $usuario['Favorites'] . "<br>";
+            }
+            
+        }
+        
     }
+
 ?>
